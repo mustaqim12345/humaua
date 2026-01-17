@@ -1,11 +1,15 @@
 pipeline {
     agent any
 
-    stages {
+    environment {
+        DOCKER_IMAGE = "my-java-app:latest"
+        CONTAINER_NAME = "my-java-container"
+    }
 
-        stage('Checkout') {
+    stages {
+        stage('Checkout SCM') {
             steps {
-                checkout scm
+                git branch: 'main', url: 'https://github.com/mustaqim12345/humaua.git'
             }
         }
 
@@ -15,23 +19,27 @@ pipeline {
             }
         }
 
+        stage('Prepare Docker') {
+            steps {
+                sh 'cp target/demo-1.0.0.jar app.jar'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
-                sh '''
-                docker build -t my-java-app:latest .
-                '''
+                sh 'docker build -t $DOCKER_IMAGE .'
             }
         }
 
         stage('Stop Old Container') {
             steps {
-                sh 'docker rm -f my-java-container || true'
+                sh 'docker rm -f $CONTAINER_NAME || true'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d --name my-java-container -p 8081:8080 my-java-app:latest'
+                sh 'docker run -d --name $CONTAINER_NAME -p 8081:8081 $DOCKER_IMAGE'
             }
         }
     }
