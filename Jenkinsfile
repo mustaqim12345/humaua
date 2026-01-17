@@ -1,5 +1,4 @@
 pipeline {
-pipeline {
     agent any
 
     stages {
@@ -19,7 +18,6 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                cp target/*.jar app.jar
                 docker build -t my-java-app:latest .
                 '''
             }
@@ -33,7 +31,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d --name my-java-container -p 8081:8080 --restart always my-java-app:latest'
+                sh 'docker run -d --name my-java-container -p 8081:8080 my-java-app:latest'
             }
         }
     }
