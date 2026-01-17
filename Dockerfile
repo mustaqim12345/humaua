@@ -1,6 +1,5 @@
-FROM openjdk:17-jdk-slim-bullseye
+FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 COPY app.jar app.jar
 EXPOSE 8081
 CMD ["java", "-jar", "app.jar"]
-
