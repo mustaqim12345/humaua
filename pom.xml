@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
          https://maven.apache.org/xsd/maven-4.0.0.xsd">
->>>>>>> f4f4a8f (Your commit message here)
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -17,38 +10,22 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.1</version>
-<<<<<<< HEAD
-        <relativePath/>
-=======
-        <relativePath/> <!-- lookup parent from repository -->
->>>>>>> f4f4a8f (Your commit message here)
+        <relativePath/> 
     </parent>
 
     <groupId>com.example</groupId>
     <artifactId>demo</artifactId>
-<<<<<<< HEAD
-    <version>1.0</version>
-    <packaging>jar</packaging>
-
-    <name>demo</name>
-    <description>Spring Boot Demo</description>
-=======
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>demo</name>
     <description>Spring Boot Demo Application</description>
->>>>>>> f4f4a8f (Your commit message here)
 
     <properties>
         <java.version>17</java.version>
     </properties>
 
     <dependencies>
-<<<<<<< HEAD
-=======
-        <!-- Spring Boot Web -->
->>>>>>> f4f4a8f (Your commit message here)
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -57,10 +34,6 @@
 
     <build>
         <plugins>
-<<<<<<< HEAD
-=======
-
-            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -71,16 +44,10 @@
                 </configuration>
             </plugin>
 
-            <!-- Spring Boot Plugin -->
->>>>>>> f4f4a8f (Your commit message here)
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-<<<<<<< HEAD
-=======
-
->>>>>>> f4f4a8f (Your commit message here)
         </plugins>
     </build>
 
