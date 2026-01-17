@@ -1,7 +1,14 @@
 pipeline {
+pipeline {
     agent any
 
     stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Maven Build') {
             steps {
@@ -26,15 +33,8 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                sh '''
-                docker run -d \
-                --name my-java-container \
-                -p 8081:8080 \
-                --restart always \
-                my-java-app:latest
-                '''
+                sh 'docker run -d --name my-java-container -p 8081:8080 --restart always my-java-app:latest'
             }
         }
     }
 }
-
