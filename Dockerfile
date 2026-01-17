@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim-bullseye
+FFROM openjdk:17.0.9-jdk-slim
 WORKDIR /app
 COPY app.jar app.jar
 EXPOSE 8081
