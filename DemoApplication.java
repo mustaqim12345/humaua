@@ -1,4 +1,4 @@
-package com.example;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +15,6 @@ public class DemoApplication {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello from Jenkins Docker Pipeline 🚀";
+        return "Hello from Spring Boot + Jenkins + Docker 🚀";
     }
 }
