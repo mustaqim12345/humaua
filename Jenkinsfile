@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/mustaqim12345/humaua.git'
-            }
-        }
-
         stage('Maven Build') {
             steps {
                 sh 'mvn clean package -DskipTests'
@@ -26,9 +20,7 @@ pipeline {
 
         stage('Stop Old Container') {
             steps {
-                sh '''
-                docker rm -f my-java-container || true
-                '''
+                sh 'docker rm -f my-java-container || true'
             }
         }
 
@@ -45,3 +37,4 @@ pipeline {
         }
     }
 }
+
